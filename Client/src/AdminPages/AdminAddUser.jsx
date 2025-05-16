@@ -30,6 +30,7 @@ export default function AdminAddUser() {
     try {
       let respose = await fetch(`https://rolebaedmangement.onrender.com/api/auth/register`,{
         method:"POST",
+        credentials: 'include',
         headers:{
           "Content-Type":"application/json"
         },

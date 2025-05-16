@@ -37,6 +37,7 @@ export default function PlaceOrder() {
         try {
             const response = await fetch(`https://rolebaedmangement.onrender.com/api/orders/placeOrder`, {
                 method: "POST",
+                credentials: 'include',
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: AuthorizationToken

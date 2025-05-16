@@ -29,6 +29,7 @@ export default function AdminAddProduct() {
     try {
       let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/createProduct`, {
         method: "POST",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
           Authorization: AuthorizationToken

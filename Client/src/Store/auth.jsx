@@ -31,6 +31,7 @@ export const AuthProvider = ({children}) => {
             setIsLoading(true)
             let response = await fetch(`https://rolebaedmangement.onrender.com/api/users/getUser`,{
                 method:"GET",
+                credentials: 'include',
                 headers:{
                     Authorization:AuthorizationToken
                 }
@@ -58,6 +59,7 @@ export const AuthProvider = ({children}) => {
             try {
                 let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/getAllProducts`,{
                     method:"GET",
+                    credentials: 'include',
                     headers:{
                         Authorization:AuthorizationToken
                     }

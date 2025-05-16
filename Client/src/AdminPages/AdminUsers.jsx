@@ -11,6 +11,7 @@ export default function AdminUsers() {
     try {
       let response = await fetch(`https://rolebaedmangement.onrender.com/api/users/getAllUsers`,{
         method:"GET",
+        credentials: 'include',
         headers:{
           Authorization:AuthorizationToken
         }
@@ -27,6 +28,7 @@ export default function AdminUsers() {
     try {
       let response = await fetch(`https://rolebaedmangement.onrender.com/api/users/deleteUser/${id}`,{
         method:"DELETE",
+        credentials: 'include',
         headers:{
           Authorization:AuthorizationToken
         }

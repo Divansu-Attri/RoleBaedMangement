@@ -20,6 +20,7 @@ export default function AdminUpdateProduct() {
     try {
       let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/getProductById/${params.id}`, {
         method: "GET",
+        credentials: 'include',
         headers: {
           Authorization: AuthorizationToken
         }
@@ -52,6 +53,7 @@ export default function AdminUpdateProduct() {
     try {
       let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/updateProduct/${params.id}`, {
         method: "PATCH",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
           Authorization: AuthorizationToken

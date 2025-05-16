@@ -26,6 +26,7 @@ export default function Login() {
     try {
       let respose = await fetch(`https://rolebaedmangement.onrender.com/api/auth/login`,{
         method:"POST",
+        credentials: 'include',
         headers:{
           "Content-Type":"application/json"
         },

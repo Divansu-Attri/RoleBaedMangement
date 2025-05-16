@@ -10,6 +10,7 @@ export default function Order() {
         try {
             let response = await fetch(`https://rolebaedmangement.onrender.com/api/orders/getAllOrders`, {
                 method: "GET",
+                credentials: 'include',
                 headers: {
                     Authorization: AuthorizationToken
                 }
