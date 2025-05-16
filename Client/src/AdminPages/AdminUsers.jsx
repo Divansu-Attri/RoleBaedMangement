@@ -9,7 +9,7 @@ export default function AdminUsers() {
   const {AuthorizationToken} = useAuth()
   const getUsersData = async () => {
     try {
-      let response = await fetch("http://localhost:5000/api/users/getAllUsers",{
+      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/users/getAllUsers`,{
         method:"GET",
         headers:{
           Authorization:AuthorizationToken
@@ -25,7 +25,7 @@ export default function AdminUsers() {
 
   const DeleteUser = async (id) => {
     try {
-      let response = await fetch(`http://localhost:5000/api/users/deleteUser/${id}`,{
+      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/users/deleteUser/${id}`,{
         method:"DELETE",
         headers:{
           Authorization:AuthorizationToken
@@ -48,6 +48,7 @@ export default function AdminUsers() {
 
   useEffect(()=>{
     getUsersData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (

@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 
 export default function AdminAddProduct() {
   const navigate = useNavigate()
-  const { AuthorizationToken } = useAuth()
+  const { AuthorizationToken, getServices } = useAuth()
 
   const [data, setData] = useState({
     name: "",
@@ -27,7 +27,7 @@ export default function AdminAddProduct() {
     e.preventDefault()
 
     try {
-      let response = await fetch("http://localhost:5000/api/products/createProduct", {
+      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/createProduct`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,6 +38,7 @@ export default function AdminAddProduct() {
 
       if (response.ok) {
         toast.success("Product Added Successfully")
+        await getServices()
         navigate("/admin/products")
       } else {
         toast.error("Failed to Add Product")

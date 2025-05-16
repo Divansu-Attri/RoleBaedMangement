@@ -24,7 +24,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      let respose = await fetch("http://localhost:5000/api/auth/login",{
+      let respose = await fetch(`https://rolebaedmangement-backend.onrender.com/api/auth/login`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -39,7 +39,7 @@ export default function Login() {
       // localStorage.setItem('token',res_server.token)
 
         storeTokenInLS(res_server.token)
-        toast.success(res_server.message)
+        toast.success("LogIn Successfull")
         setUser({ email:"", password:"" })
         navigate("/")
       }

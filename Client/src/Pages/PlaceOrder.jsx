@@ -25,13 +25,6 @@ export default function PlaceOrder() {
         setOrderData({ ...orderData, products: updatedProducts })
     }
 
-    const addProductField = () => {
-        setOrderData({
-            ...orderData,
-            products: [...orderData.products, { product: "", quantity: 1 }]
-        })
-    }
-
     const removeProductField = (index) => {
         const updatedProducts = [...orderData.products]
         updatedProducts.splice(index, 1)
@@ -42,7 +35,7 @@ export default function PlaceOrder() {
         e.preventDefault()
 
         try {
-            const response = await fetch("http://localhost:5000/api/orders/placeOrder", {
+            const response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/orders/placeOrder`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -117,9 +110,6 @@ export default function PlaceOrder() {
                     </div>
                 </div>
             ))}
-
-            <button type="button" className="btn btn-secondary mb-3" onClick={addProductField}>Add Another Product</button>
-
             <button type="submit" className="btn btn-primary w-100">Place Order</button>
         </form>
     )

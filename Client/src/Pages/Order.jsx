@@ -8,7 +8,7 @@ export default function Order() {
 
     const getProductData = async () => {
         try {
-            let response = await fetch("http://localhost:5000/api/orders/getAllOrders", {
+            let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/orders/getAllOrders`, {
                 method: "GET",
                 headers: {
                     Authorization: AuthorizationToken
@@ -24,6 +24,7 @@ export default function Order() {
 
     useEffect(() => {
         getProductData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     console.log(product)
 
@@ -62,7 +63,7 @@ export default function Order() {
                         ) : (
                             <tr>
                                 <td colSpan="5" className="text-center no-products">
-                                    Please LogIn if you need products!!
+                                   This page only for Admin/Manager.
                                 </td>
                             </tr>
                         )}

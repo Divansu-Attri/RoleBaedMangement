@@ -29,7 +29,7 @@ export const AuthProvider = ({children}) => {
         if(token){
         try {
             setIsLoading(true)
-            let response = await fetch("http://localhost:5000/api/users/getUser",{
+            let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/users/getUser`,{
                 method:"GET",
                 headers:{
                     Authorization:AuthorizationToken
@@ -56,7 +56,7 @@ export const AuthProvider = ({children}) => {
     const getServices = async () => {
         if(token){
             try {
-                let response = await fetch("http://localhost:5000/api/products/getAllProducts",{
+                let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/getAllProducts`,{
                     method:"GET",
                     headers:{
                         Authorization:AuthorizationToken
@@ -78,15 +78,21 @@ export const AuthProvider = ({children}) => {
 
 
     useEffect(()=>{
-        getServices()
         userAuthentication()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[token])
 
-    return <AuthContext.Provider value={{storeTokenInLS,LogOutUser,isLoggedIn,user,service,AuthorizationToken,isLoading}}>
+    useEffect(()=>{
+        getServices()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[token])
+
+    return <AuthContext.Provider value={{storeTokenInLS,LogOutUser,isLoggedIn,user,service,AuthorizationToken,isLoading, getServices}}>
         {children}
     </AuthContext.Provider>
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
     return useContext(AuthContext)
 }

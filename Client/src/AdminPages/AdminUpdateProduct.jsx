@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 export default function AdminUpdateProduct() {
   const navigate = useNavigate()
   const params = useParams()
-  const { AuthorizationToken } = useAuth()
+  const { AuthorizationToken, getServices } = useAuth()
 
   const [data, setData] = useState({
     name: "",
@@ -18,7 +18,7 @@ export default function AdminUpdateProduct() {
   const getSingleUserData = async () => {
 
     try {
-      let response = await fetch(`http://localhost:5000/api/products/getProductById/${params.id}`, {
+      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/getProductById/${params.id}`, {
         method: "GET",
         headers: {
           Authorization: AuthorizationToken
@@ -35,6 +35,7 @@ export default function AdminUpdateProduct() {
 
   useEffect(() => {
     getSingleUserData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleInput = (e) => {
@@ -49,7 +50,7 @@ export default function AdminUpdateProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      let response = await fetch(`http://localhost:5000/api/products/updateProduct/${params.id}`, {
+      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/updateProduct/${params.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -59,6 +60,7 @@ export default function AdminUpdateProduct() {
       })
       if (response.ok) {
         toast.success("Updated Successfully")
+        await getServices()
         navigate("/admin/products")
       }
       else {

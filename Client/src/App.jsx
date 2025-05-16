@@ -8,7 +8,6 @@ import Error from './Pages/Error';
 import Logout from './Pages/Logout';
 import AdminLayout from './AdminPages/AdminLayout';
 import AdminUsers from './AdminPages/AdminUsers';
-import AdminContact from './AdminPages/AdminContact';
 import AdminUpdate from './AdminPages/AdminUpdate';
 import AdminProducts from './AdminPages/AdminProducts';
 import AdminUpdateProduct from './AdminPages/AdminUpdateProduct';
@@ -43,8 +42,6 @@ export default function App() {
         <Route path='products' element={<AdminProducts/>}/>
         <Route path='addproduct' element={<AdminAddProduct/>}/>
         <Route path='product/:id/edit' element={<AdminUpdateProduct/>}/>
-
-        <Route path='contacts' element={<AdminContact/>}/>
         
         </Route>
 
