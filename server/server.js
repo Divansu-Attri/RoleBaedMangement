@@ -14,26 +14,17 @@ const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
 connectDB();
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'https://role-baed-mangement.vercel.app',
+    'https://role-baed-mangement-65pduhnhz-divansus-projects.vercel.app'
+  ],
+  methods: 'GET,PUT,PATCH,DELETE,POST,HEAD,OPTIONS',
+  credentials: true,
+};
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://role-baed-mangement-project.vercel.app",
-  "https://role-baed-mangement-65pduhnhz-divansus-projects.vercel.app"
-];
-
-app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods:"GET,PUT,PATCH,DELETE,POST,HEAD",
-  credentials:true
-}));
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
