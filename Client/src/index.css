@@ -1,0 +1,19 @@
+
+/* Customize the toast body */
+.toast-body {
+  font-size: 1rem;
+  color: whitesmoke; /* Makes the text darker */
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 2px 2px 4px #aaa;
+}
+
+body {
+  transition: background-color 0.5s, color 0.5s;
+  background-color: #f3efef;
+  color: #242222;
+  transition: background-color 0.5s, color 0.5s;
+
+}

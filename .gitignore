@@ -1,0 +1,23 @@
+# .gitignore (in root)
+
+# Node modules
+node_modules/
+Client/node_modules/
+server/node_modules/
+
+# Logs
+*.log
+
+# Builds
+Client/dist/
+Client/build/
+server/build/
+
+# Environment variables
+.env
+Client/.env
+server/.env
+
+# OS/System files
+.DS_Store
+Thumbs.db
