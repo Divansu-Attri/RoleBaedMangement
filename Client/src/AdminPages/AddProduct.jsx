@@ -27,7 +27,7 @@ export default function AdminAddProduct() {
     e.preventDefault()
 
     try {
-      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/createProduct`, {
+      let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/createProduct`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

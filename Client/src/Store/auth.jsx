@@ -29,7 +29,7 @@ export const AuthProvider = ({children}) => {
         if(token){
         try {
             setIsLoading(true)
-            let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/users/getUser`,{
+            let response = await fetch(`https://rolebaedmangement.onrender.com/api/users/getUser`,{
                 method:"GET",
                 headers:{
                     Authorization:AuthorizationToken
@@ -56,7 +56,7 @@ export const AuthProvider = ({children}) => {
     const getServices = async () => {
         if(token){
             try {
-                let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/getAllProducts`,{
+                let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/getAllProducts`,{
                     method:"GET",
                     headers:{
                         Authorization:AuthorizationToken

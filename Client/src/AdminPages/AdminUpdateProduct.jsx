@@ -18,7 +18,7 @@ export default function AdminUpdateProduct() {
   const getSingleUserData = async () => {
 
     try {
-      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/getProductById/${params.id}`, {
+      let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/getProductById/${params.id}`, {
         method: "GET",
         headers: {
           Authorization: AuthorizationToken
@@ -50,7 +50,7 @@ export default function AdminUpdateProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/products/updateProduct/${params.id}`, {
+      let response = await fetch(`https://rolebaedmangement.onrender.com/api/products/updateProduct/${params.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

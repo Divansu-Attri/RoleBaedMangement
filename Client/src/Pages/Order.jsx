@@ -8,7 +8,7 @@ export default function Order() {
 
     const getProductData = async () => {
         try {
-            let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/orders/getAllOrders`, {
+            let response = await fetch(`https://rolebaedmangement.onrender.com/api/orders/getAllOrders`, {
                 method: "GET",
                 headers: {
                     Authorization: AuthorizationToken

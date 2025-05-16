@@ -28,7 +28,7 @@ export default function AdminAddUser() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      let respose = await fetch(`https://rolebaedmangement-backend.onrender.com/api/auth/register`,{
+      let respose = await fetch(`https://rolebaedmangement.onrender.com/api/auth/register`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

@@ -9,7 +9,7 @@ export default function AdminUsers() {
   const {AuthorizationToken} = useAuth()
   const getUsersData = async () => {
     try {
-      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/users/getAllUsers`,{
+      let response = await fetch(`https://rolebaedmangement.onrender.com/api/users/getAllUsers`,{
         method:"GET",
         headers:{
           Authorization:AuthorizationToken
@@ -25,7 +25,7 @@ export default function AdminUsers() {
 
   const DeleteUser = async (id) => {
     try {
-      let response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/users/deleteUser/${id}`,{
+      let response = await fetch(`https://rolebaedmangement.onrender.com/api/users/deleteUser/${id}`,{
         method:"DELETE",
         headers:{
           Authorization:AuthorizationToken
@@ -59,7 +59,7 @@ export default function AdminUsers() {
           <h1 className="mb-0">Products</h1>
           <Link to="/admin/adduser" className="btn btn-primary">
             <FaPlus className="me-2" />
-            Add Product
+            Add User
           </Link> 
         </div>
       <table className="table table-striped table-bordered">

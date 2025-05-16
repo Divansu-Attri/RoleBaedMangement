@@ -35,7 +35,7 @@ export default function PlaceOrder() {
         e.preventDefault()
 
         try {
-            const response = await fetch(`https://rolebaedmangement-backend.onrender.com/api/orders/placeOrder`, {
+            const response = await fetch(`https://rolebaedmangement.onrender.com/api/orders/placeOrder`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

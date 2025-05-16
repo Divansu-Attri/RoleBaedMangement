@@ -24,7 +24,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      let respose = await fetch(`https://rolebaedmangement-backend.onrender.com/api/auth/login`,{
+      let respose = await fetch(`https://rolebaedmangement.onrender.com/api/auth/login`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
